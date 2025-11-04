@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> <!-- Configuração de caracteres UTF-8, compatível com acentos e símbolos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+
+    <!-- Meta Tags Essenciais -->
+    <meta name="author" content="Cintia Dourado">
+    <meta name="description" content="Cintia Dourado – QA & Java Dev Portfolio. Explore my projects, learn about my skills, and get in touch!">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="QA, Java, Full Stack, Portfolio, HTML, CSS, JavaScript">
+
+    <!-- Favicon (PNG recomendado para compatibilidade) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon.png">
+    <link rel="shortcut icon" href="./assets/img/favicon.png">
+
+    <!-- Título -->
+    <title>Cintia Dourado 💻 QA & Java Dev Portfolio</title>
+</head>
+
+<body>
+    
+<!-- Cabeçalho da página - Header -->
+ <header class="flex menu_container">
+    <!-- Article: define as divisões internas -->
+    <article class="menu_content">
+        <!-- -->
+        <div id="title">
+            <a href="#">Cintia's Portfolio ❤︎</a> 
+        </div>
+        <!-- Menu de navegação -->
+        <nav>
+            <ul>
+                <li><a href="#hero">Welcome</a></li>                   
+                <li><a href="about">About Me</a></li>
+                <li><a href="#contact">Git in Touch</a></li>
+            </ul>
+        </nav>
+    </article>
+ </header>
+
+ <!-- Área Principal do Site -->
+  <main>
+    <!--  -->
+    <section id="hero" class="hero_container">
+        <!-- Article: define as divisões internas -->
+        <article class="hero_content">
+            <h4>✌🏻 Hi there! I'm Cintia!</h4>
+            <h1>Java Full Stack Dev</h1>
+            <p> I turn ideas into code magic to create awesome experiences ✨</p>
+            <div class="hero_buttons">
+                <a href="#contact" class="button">Get in Touch</a>
+                <span> 💫 </span>
+                <a href="#about" class="button-outline">Get to Know Me Better</a>
+            </div>
+        </article>
+
+        <figure class="hero_image">
+            <img
+                src="/assets/img/dev_woman.svg"
+                alt="Ilustração com uma mulher desenvolvedora escrevendo código"
+                class="Ilustração float-animation"
+            >
+        </figure>
+    </section>
+
+    <section id="about" class="about_container">
+ 
+        <figure class="about_image">
+            <img 
+                src="assets/img/avatar_dev_woman.svg" 
+                alt="Foto da pessoa desenvolvedora"
+            >
+        </figure>
+
+        <article class="about_content">
+            <h2>About Me</h2>
+            <p>I am a curious and creative person who loves to learn. I like challenges, new ideas, and growing with every experience.</p>
+            <p>I work as a Quality Manager and I am studying Java Full Stack development. I believe that quality and development together can create better and smarter products.</p>
+            <p>My goal is to keep learning, grow in the tech area, and help build projects that make a difference. Every step is a chance to learn and do something better.</p>
+
+            <div class="about_stats">
+                <a href="#" target="_blank" class="button">View GitHub</a>
+                <div class="stat-item">
+                    <p class="stat-numer">100</p>
+                    <p class="stat-label">Followers <span>👥</span> </p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-numer">500</p>
+                    <p class="stat-label">Repositories <span>📂</span> </p>
+                </div>
+            </div>
+
+        </article>
+    </section>
+
+    <section id="contact">
+
+        <article class="contact_info">
+            <h4>Get in Touch</h4>
+            <p>Feel free to get in touch with me!</p>
+            <div class="social_container">
+                <a href="#" target="_blank" class="social_icon">
+                    <img
+                        src="./assets/img/linkedin.svg"
+                        alt="Link to my Linkedin profile page"
+                    >
+                </a>
+                <a href="#" target="_blank" class="social_icon">
+                    <img
+                        src="./assets/img/github.svg"
+                        alt="Link to my GitHub"
+                    >
+                <a href="#" target="_blank" class="social_icon">
+                    <img
+                        src="./assets/img/instagram.svg"
+                        alt="Link to my Instagram"
+                    >
+                </a>
+            </div>
+        </article>
+
+        <form id="contact-form">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Enter your full name">
+            <span id="txtName"></span>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email">
+            <span id="txtEmail"></span>
+
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" placeholder="Enter your subject">
+            <span id="txtSubject"></span>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+        
+            <button class="button" type="submit">Send message</button>
+        </form>
+    </section>
+  </main>
+
+  <!-- Footer - Rodapé -->
+
+  <footer>
+
+     ✨ Made with love 🌸 Cintia Marques Dourado © 2025 💛
+
+  </footer>
+
+
+</body>
+</html>
