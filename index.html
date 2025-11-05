@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8"> <!-- Configuração de caracteres UTF-8, compatível com acentos e símbolos -->
+
+    <!-- Configuração de caracteres UTF-8, compatível com acentos e símbolos -->
+    <meta charset="UTF-8"> 
+    
+    <!-- LAYOUT MOBILE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
 
     <!-- Meta Tags Essenciais -->
@@ -10,13 +14,24 @@
     <meta name="robots" content="index, follow">
     <meta name="keywords" content="QA, Java, Full Stack, Portfolio, HTML, CSS, JavaScript">
 
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
     <!-- Favicon (PNG recomendado para compatibilidade) -->
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon.png">
     <link rel="shortcut icon" href="./assets/img/favicon.png">
 
-    <!-- Título -->
+    <!-- Servidores de Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonte do Google - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Título da Pagina-->
     <title>Cintia Dourado 💻 QA & Java Dev Portfolio</title>
+
 </head>
 
 <body>
@@ -31,7 +46,7 @@
         </div>
         <!-- Menu de navegação -->
         <nav>
-            <ul>
+            <ul class="flex menu_list">
                 <li><a href="#hero">Welcome</a></li>                   
                 <li><a href="about">About Me</a></li>
                 <li><a href="#contact">Git in Touch</a></li>
@@ -40,11 +55,12 @@
     </article>
  </header>
 
- <!-- Área Principal do Site -->
+ <!-- Área Principal do Site - MAIN -->
   <main>
-    <!--  -->
+    <!-- #HERO -->
     <section id="hero" class="hero_container">
         <!-- Article: define as divisões internas -->
+        <!-- BOAS VINDAS -->
         <article class="hero_content">
             <h4>✌🏻 Hi there! I'm Cintia!</h4>
             <h1>Java Full Stack Dev</h1>
@@ -56,6 +72,7 @@
             </div>
         </article>
 
+        <!-- IMAGEM COM ANIMAÇÃO -->
         <figure class="hero_image">
             <img
                 src="/assets/img/dev_woman.svg"
@@ -65,8 +82,10 @@
         </figure>
     </section>
 
+    <!-- #ABOUT -->
     <section id="about" class="about_container">
  
+        <!-- FOTO DO PERFIL -->
         <figure class="about_image">
             <img 
                 src="assets/img/avatar_dev_woman.svg" 
@@ -74,6 +93,7 @@
             >
         </figure>
 
+        <!-- CONTEÚDO DO PERFIL -->
         <article class="about_content">
             <h2>About Me</h2>
             <p>I am a curious and creative person who loves to learn. I like challenges, new ideas, and growing with every experience.</p>
@@ -95,8 +115,10 @@
         </article>
     </section>
 
-    <section id="contact">
+    <!-- #CONTACT -->
+    <section id="contact" class="contact_container">
 
+        <!-- REDES SOCIAIS -->
         <article class="contact_info">
             <h4>Get in Touch</h4>
             <p>Feel free to get in touch with me!</p>
@@ -112,6 +134,7 @@
                         src="./assets/img/github.svg"
                         alt="Link to my GitHub"
                     >
+                </a>
                 <a href="#" target="_blank" class="social_icon">
                     <img
                         src="./assets/img/instagram.svg"
@@ -121,7 +144,8 @@
             </div>
         </article>
 
-        <form id="contact-form">
+        <!-- FORMULÁRIO -->
+        <form id="form">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" placeholder="Enter your full name">
             <span id="txtName"></span>
