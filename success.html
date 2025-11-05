@@ -1,61 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8"> <!-- Configuração de caracteres UTF-8, compatível com acentos e símbolos -->
+    <!-- Configuração de caracteres UTF-8, compatível com acentos e símbolos -->
+    <meta charset="UTF-8"> 
+   
+    <!-- LAYOUT MOBILE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
 
-    <!-- Meta Tags -->
+    <!-- Meta Tags Essenciais -->
     <meta name="author" content="Cintia Dourado">
     <meta name="description" content="Cintia Dourado – QA & Java Dev Portfolio. Explore my projects, learn about my skills, and get in touch!">
     <meta name="robots" content="index, follow">
     <meta name="keywords" content="QA, Java, Full Stack, Portfolio, HTML, CSS, JavaScript">
+
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
 
     <!-- Favicon (PNG recomendado para compatibilidade com Mac) -->
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon.png">
     <link rel="shortcut icon" href="./assets/img/favicon.png">
 
-    <!-- Title -->
+    <!-- Servidores de Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonte do Google - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Título da Pagina -->
     <title>Cintia Dourado 💻 QA & Java Dev Portfolio</title>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="flex menu_container">
-        <!-- Article: define as divisões internas -->
-        <article class="menu_content">
-            <!-- Page title -->
-            <div id="title">
-                <a href="#">Cintia's Portfolio ❤︎</a>
+<!-- Header -->
+<header class="flex menu_container">
+    <!-- Article: define as divisões internas -->
+    <article class="menu_content">
+        <!-- Page title -->
+        <div id="title">
+            <a href="#">Cintia's Portfolio ❤︎</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Welcome</a></li>                   
+                <li><a href="about">About Me</a></li>
+                <li><a href="#contact">Git in Touch</a></li>
+            </ul>
+        </nav>
+    </article>
+</header>
+
+<!-- Success Page - After sendo form-->
+<main>
+    <section id="sucess" class="sucess_container">
+        <article class="sucess_content">
+            <img src="./assets/img/sucess.svg" alt="Success icon" class="sucess_icon">
+            <h1>Email sent successfully!</h1>
+            <p>Thank you for your message!</p>
+            <p>I will reply soon.</p>
+            <div class="success_button">
+                <a href="index.html" class="button">Back to home</a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#hero">Welcome</a></li>                   
-                    <li><a href="about">About Me</a></li>
-                    <li><a href="#contact">Git in Touch</a></li>
-                </ul>
-            </nav>
         </article>
-    </header>
+    </section>
 
-    <!-- Success Page - After sendo form-->
-    <main>
-        <section id="sucess" class="sucess_container">
-            <article class="sucess_content">
-                <img src="./assets/img/sucess.svg" alt="Success icon" class="sucess_icon">
-                <h1>Email sent successfully!</h1>
-                <p>Thank you for your message!</p>
-                <p>I will reply soon.</p>
-                <div class="success_button">
-                    <a href="index.html" class="button">Back to home</a>
-                </div>
-            </article>
-        </section>
-
-        <footer>
-            Made with ❤︎ and ☕️ by Cintia Marques Dourado
-        </footer>
+    <footer>
+        Made with ❤︎ and ☕️ by Cintia Marques Dourado
+    </footer>
 
 
 </body>
