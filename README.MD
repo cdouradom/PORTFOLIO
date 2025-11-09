@@ -80,6 +80,9 @@ Contribuições são bem-vindas! Se você tiver sugestões ou melhorias, sinta-s
 
 <br />
 ## 📬 Contato
+<br />
 📧 Email: cintia.dourado@email.com
+
 💼 LinkedIn: linkedin.com/in/cintiadourado
+
 🐙 GitHub: github.com/cdouradom
