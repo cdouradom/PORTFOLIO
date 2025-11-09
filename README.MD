@@ -66,7 +66,7 @@ Isso abrirá o site em seu navegador padrão, e você poderá visualizar e testa
 O portfólio está publicado e disponível online através do GitHub Pages:
 
 ## 👉 Acesse o portfólio em produção:
-https://cdouradom.github.io/portfolio-cintia-dourado/
+https://cdouradom.github.io/PORTFOLIO
 
 Atualizações feitas no branch principal (main) são automaticamente refletidas no site publicado.
 
