@@ -120,11 +120,7 @@ if (form) { // Função de envio e validação do formulário
     }
 
     //Se passou por todas as validações, envia o formulário
-    form.requestSubmit(); 
-        /* troquei o form.submit(); por este mais seguro e moderno
-        para nao causar recursão infinita 
-        se o botão for do tipo submit e o mesmo evento for disparado novamente
-        */
+    form.submit();
  
   });
 }
