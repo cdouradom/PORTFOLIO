@@ -1,4 +1,4 @@
-// Selecionar a Seção Abaout
+// Selecionar a Seção About
 
 const about = document.querySelector('#about');
 
