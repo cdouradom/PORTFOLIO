@@ -10,30 +10,67 @@
 
 /* --- VARIÁVEIS --- */
 :root {
-    /* Cores */
-    --purple-50:  #f4eaff; 
-    --purple-100: #e9dcfa; 
-    --purple-200: #cdb3f0; 
-    --purple-300: #b186e5; 
-    --purple-400: #9460db; 
-    --purple-500: #6b36c8; 
-    --purple-600: #5b2ca0; 
-    --purple-700: #4c2177; 
-    --purple-800: #441f88; 
-    --purple-900: #2a0e4d; 
-    --gray-100: #f5f5f5;
-    --gray-200: #e8e8e8;
-    --gray-400: #505861;
-    --black-800: #171717;
-    --white: #ffffff;
-    --error: #aa2934;
+  /* === PALETA PRINCIPAL — rosé moderno com acentos frios === */
 
-    /* Sombras */
-    --shadow-sm: 0 0.25rem 0.5rem #0000000D;
-    --shadow-md: 0 0.25rem 0.75rem #6B36C84D;
-    --shadow-lg: 0 0.5rem 1.5rem #6B36C833;
-    --shadow-focus: 0 0 0 0.25rem #6B36C81A;
+  /* Rosés e terrosos */
+  --rose-50:  #faf4f3;
+  --rose-100: #f6e8e6;
+  --rose-200: #efccc7;
+  --rose-300: #e4a79e;
+  --rose-400: #d68275;
+  --rose-500: #c25e58;
+  --rose-600: #a64949;
+  --rose-700: #853939;
+  --rose-800: #612b44;
+  --rose-900: #3e1d1d;
+
+  /* Acentos frios — lilás, violeta e azul-aqua */
+  --violet-50:  #f6f3fa;
+  --violet-100: #ede4f8;
+  --violet-200: #d4c1f0;
+  --violet-300: #b79ae8;
+  --violet-400: #9a74df;
+  --violet-500: #7c55d4;
+  --violet-600: #5d3eb7;
+  --violet-700: #463192;
+  --violet-800: #32226b;
+  --violet-900: #211547;
+
+  /* Aqua-azulados (inspirados no degradê do MySQL) */
+  --aqua-50:  #f0f9fa;
+  --aqua-100: #d8f2f4;
+  --aqua-200: #ade4ea;
+  --aqua-300: #79cfdc;
+  --aqua-400: #45b9cd;
+  --aqua-500: #2a9fb5;
+  --aqua-600: #1f7f93;
+  --aqua-700: #176473;
+  --aqua-800: #104a54;
+  --aqua-900: #0a3138;
+
+  /* Neutros quentes e frios */
+  --gray-50:  #f8f6f5;
+  --gray-100: #edeae9;
+  --gray-200: #dbd6d3;
+  --gray-400: #7d736f;
+  --gray-600: #4a423f;
+  --gray-800: #2c2725;
+  --white: #ffffff;
+  --black: #121010;
+
+  /* Cores de feedback */
+  --success: #5cb9a6;   /* verde com toque frio */
+  --warning: #e7a25a;   /* dourado suave */
+  --error:   #c75a4a;   /* vermelho-rosé */
+  --info:    #5b8fd6;   /* azul-violeta informativo */
+
+  /* === Sombras e destaques === */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(194, 94, 88, 0.25);
+  --shadow-lg: 0 8px 20px rgba(122, 85, 212, 0.15);
+  --shadow-focus: 0 0 0 4px rgba(42, 159, 181, 0.25);
 }
+
 
 /* --- Estilos Globais --- */
 
@@ -45,8 +82,9 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #fdfbf9;
-    color: var(--black-800);
+    background-color: var(--rose-50);
+    color: var(--rose-900);
+    scroll-padding-top: 8rem; /* distância fixa que compensa o header */
 }
 
 main{
@@ -61,7 +99,7 @@ button{
 /* ---  HEADER --- */
 
 header {
-  background-color: var(--purple-800);
+  background: linear-gradient(to left top, var(--rose-400), var(--rose-700));
   padding: 2.5rem;
   box-shadow: var(--shadow-sm);
   position: sticky;
@@ -75,8 +113,8 @@ header {
     top: 0;
     width: 100%;
     height: 5rem;
-    background-color: var(--purple-800);
-    border-bottom: 0.5rem solid var(--gray-200);
+    background-color: var(--rose-600);
+    border-bottom: 0.5rem solid var(--rose-300);
     box-shadow: var(--shadow-sm);
     z-index: 1000;
 }
@@ -88,13 +126,14 @@ header {
 }
 
 .menu_container a:hover{
-    color: var(--purple-200);
+    color: var(--rose-900);
 }
 .menu_content{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 70rem;
+    max-width: 70rem; /* <-- substitui width fixa -- estava perdendo o titulo no mobile sem isso */
+    width: 100%;
     height: 100%;
     padding: 0 1.5rem;
     margin: 0 auto;
@@ -108,67 +147,90 @@ header {
 
 .menu_list a{
     padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
 }
 
 .menu_list a:hover {
-  color: var((--purple-200));
+  color: var(--rose-900);
 }
 
 #title a{
     font-size: 1.3rem;
     font-weight: 700;
+    color: white;
 }
+
+#title a:hover {
+  color: var(--rose-900);
+}
+
 
 /* --- Seções - Estilos Comuns --- */
 
 .hero_container,
 .about_container,
-.contact_container{
-    max-width: 70rem;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
-    scroll-margin-top: 6rem;
+.contact_container {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+
+  /* Corrige o deslocamento das âncoras */
+  scroll-margin-top: 8rem; /* equivalente à altura do header fixo */
 }
+
 
 /* --- HERO --- */
 .hero_container {
-    min-height: calc(80vh - 5rem);
+    margin-top: 2rem;
+    min-height: auto; /*  calc(80vh - 5rem) > removi essa altura mínima fixa pq no full Hd estava gigante */
     display: flex;
     align-items: center;
-    gap: 4rem;
-    background-color: var(--gray-100);
+    justify-content: center;
+    gap: 0; /* remover o espaçamento extra entre as colunas */
+    background-color: var(--rose-100);
     border-radius: 1rem;
+    padding: 4rem 2rem; /* adicionar respiro, mas evita altura forçada */
+    overflow: hidden; /* garante que bordas arredondadas se apliquem */
 }
 
+/* === Divide igualmente em 50% === */
+.hero_content,
+.hero_image {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+/* Conteúdo de texto */
 .hero_content {
-    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    padding: 3rem; /* adiciona espaçamento interno */
 }
 
 .hero_content h4 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--purple-600);
+    color: var(--rose-700);
 }
 
 .hero_content h1 {
     font-size: 2rem;
     font-weight: 700;
     line-height: 2rem;
-    color: var(--purple-800);
+    color: var(--rose-500);
 
 }
 
 .hero_content p {
     font-size: 1.125rem;
     line-height: 1.75rem;
-    color: var(--gray-400);
+    color: var(--rose-400);
 }
 
 .hero_image{
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -181,12 +243,6 @@ header {
         height: auto;
 }*/
 
-.hero_image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .ilustracao {
     width: 100%;
@@ -206,7 +262,7 @@ header {
     }
 
     .float-animation {
-        animation: float 3s ease-in-out infinite;
+        animation: float 4s ease-in-out infinite;
     }
 
     
@@ -223,27 +279,27 @@ header {
 }
 
 .button{
-    border: 0.25rem solid var(--purple-500);
+    border: 0.25rem solid var(--rose-600);
     color: var(--white);
-    background-color: var(--purple-500);
+    background-color: var(--rose-600);
 }
 
 .button-outline{
-    border: 0.25rem solid var(--purple-500);
-    color: var(--purple-500);
+    border: 0.25rem solid var(--rose-600);
+    color: var(--rose-600);
     background-color: transparent;
 }
 
 .button:hover {
-    border: 0.25rem solid var(--purple-500);
-    color: var(--purple-500);
-    background-color: var(--white-400);
+    border: 0.25rem solid var(--rose-600);
+    color: var(--rose-600);
+    background-color: var(--rose-100);
     box-shadow: var(--shadow-md);
     transform: translateY(-0.25rem);
 }
 
 .button-outline:hover {
-    background-color: var(--purple-500);
+    background-color: var(--rose-600);
     color: var(--white);
     box-shadow: var(--shadow-md);
     transform: translateY(-0.25rem);
@@ -262,7 +318,7 @@ header {
     display: flex;
     align-items: center;
     gap: 4rem;
-    background-color: var(--gray-200);
+    background-color: var(--rose-200);
     border-radius: 1rem;
 }
 
@@ -272,7 +328,7 @@ header {
 
 .about_image img {
     width: 100%;
-    border: 0.275rem solid var(--purple-600);
+    border: 0.275rem solid var(--rose-800);
     border-radius: 50%;
     box-shadow: var(--shadow-lg);
 }
@@ -281,7 +337,7 @@ header {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: var(--purple-800);
+    color: var(--rose-800);
 }
 
 .about_content p {
@@ -317,42 +373,201 @@ header {
     font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
-    color: var(--purple-500);
+    color: var(--rose-900);
     margin-bottom: 0;
 }
 
 .stats-wrapper .stat-label {
     font-size: 0.875rem;
-    color: var(--gray-400);
+    color: var(--rose-900);
     text-align: center;
     margin-bottom: 0;
 }
 
+/* --- SKILLS & TOOLS --- */
+.skills_container {
+  max-width: 70rem;
+  margin: 4rem auto;
+  padding: 3rem 1.5rem;
+  background-color: var(--rose-100);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.skills_container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--rose-700);
+  margin-bottom: 1rem;
+}
+
+.skills_intro {
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--rose-700);
+  margin-bottom: 3rem;
+}
+
+/* --- GRID PRINCIPAL --- */
+
+.skills_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.skills_column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* --- TÍTULOS DAS COLUNAS --- */
+.title_skills_front,
+.title_skills_back {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background: transparent;
+  border: solid var(--rose-600);
+  color: var(--rose-700);
+  margin-bottom: 1rem;
+}
+
+
+/* === ITENS DE SKILL === */
+.skill_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--white);
+  border: 0.15rem solid var(--rose-200);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.skill_item img {
+  width: 3.75rem;
+  height: 3.75rem;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.skill_item:hover img {
+  transform: scale(1.1);
+}
+
+.skill_item p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--rose-800);
+}
+
+/* === RESPONSIVIDADE === */
+
+/* TABLETS (até 1024px) */
+@media screen and (max-width: 1024px) {
+  .skills_container {
+    padding: 2rem 1.5rem;
+  }
+
+  .skills_grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  #title_skills_front a,
+  #title_skills_back a {
+    font-size: 1.125rem;
+  }
+
+  .skill_item img {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .skill_item p {
+    font-size: 0.95rem;
+  }
+}
+
+/* MOBILE (até 600px) */
+@media screen and (max-width: 600px) {
+  .skills_grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  #title_skills_front a,
+  #title_skills_back a {
+    margin-bottom: 0.75rem;
+  }
+
+  .skills_container h2 {
+    font-size: 2rem;
+  }
+
+  .skills_intro {
+    font-size: 1rem;
+  }
+
+  .skill_item {
+    padding: 1rem;
+  }
+
+  .skill_item img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .skill_item p {
+    font-size: 0.9rem;
+  }
+}
+
+
 /* === CONTACT === */
 .contact_container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 4rem auto 2rem;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de 50% */
     gap: 4rem;
+    align-items: start;
+    background-color: var(--rose-200);
+    border-radius: 1rem;
+    margin: 4rem auto 2rem;
+    max-width: 70rem;
+    padding: 3rem 2rem;
 }
 
+/* Coluna das Redes Sociais */
 .contact_info {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .contact_info h4 {
     font-size: 2.5rem;
     font-weight: 700;
+    color: var(--rose-800);
     margin-bottom: 1.5rem;
-    color: var(--purple-800);
 }
 
 .contact_info p {
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
     color: var(--gray-400);
     margin-bottom: 1rem;
-
 }
 
 .social_container {
@@ -360,17 +575,25 @@ header {
     gap: 2rem;
 }
 
-.social_icon{
-    width: 4rem;
-    height: 4rem;
+/* Ícones sociais */
+.social_container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social_icon {
+    width: 3.75rem;
+    height: 3.75rem;
     padding: 0.75rem;
-    background-color: var(--gray-100);
-    border-radius: 0.5rem;
+    background-color: var(--rose-100);
+    border-radius: 0.75rem;
     transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
 }
 
 .social_icon:hover{
-    background-color: var(--purple-100);
+    background-color: var(--rose-400);
     transform: translateY(-0.25rem);
     box-shadow: var(--shadow-md);
 }
@@ -381,21 +604,21 @@ header {
 }
 
 /* mesmo sem essa parte funciona */
-.social_icon hover: img {
+.social_icon:hover img {
     filter: brightness(0) invert(100%)
 }
 
-/* FORMULÁRIO */
-form {
+/* Coluna do FORMULÁRIO */
+.contact_container form {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
 }
 
 form label {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--purple-800);
+    color: var(--rose-900);
 }
 
 form input,
@@ -403,16 +626,15 @@ form textarea {
     width: 100%;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
-    border: 0.15rem solid var(--gray-200);
+    border: 0.15rem solid var(--rose-200);
     font-size: 1rem;
-
     background-color: #fdfbf9;
     transition: border-color 0.3s ease;
 }
 
 form input:focus,
 form textarea:focus {
-    border-color: var(--purple-400);
+    border-color: var(--rose-500);
     box-shadow: var(--shadow-focus);
 }
 
@@ -424,15 +646,13 @@ form textarea{
 form span{
     font-size: 0.75rem;
     color: var(--error);
-    margin-top: -0.75rem;
+    margin-top: -0.5rem;
     font-weight: 500;
 }
 
 ::placeholder {
-  color: var(--gray-200);
+  color: var(--rose-300);
 }
-
-
 
 body {
   padding-bottom: 5rem; /* igual à altura do footer */
@@ -461,7 +681,7 @@ body {
 .success_icon {
     width: 7.5rem;
     height: 7.5rem;
-    background-color: var(--purple-100);
+    background-color: var(--rose-100);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -471,24 +691,23 @@ body {
 .success_icon svg {
     width: 3.75rem;
     height: 3.75rem;
-    fill: var(--purple-800);
 }
 
 .success_content h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--purple-800);
+    color: var(--rose-800);
 }
 
 .success_content h4 {
     font-size: 1.25rem;
-    color: var(--gray-400);
+    color: var(--rose-700);
     line-height: 1.1rem; /* diminui a altura da linha */
 }
 
 .success_content p {
     font-size: 1.25rem;
-    color: var(--gray-400);
+    color: var(--rose-700);
     line-height: 0.5rem; /* diminui a altura da linha */
     margin-top: 0; /* sem espaçamento extra */
     margin-bottom: 1.75rem; /* pequeno espaço do button */
@@ -496,9 +715,9 @@ body {
 
 /* --- FOOTER --- */
 footer {
-  background: linear-gradient(to right top, var(--purple-500), var(--purple-800));
+  background: linear-gradient(to right top, var(--rose-400), var(--rose-700));
   padding: 2.5rem;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--rose-300);
   position: fixed; /* tbm pode ser stick*/
     /* fixo para ser exibido sempre ao final da pagina
     - e acrescentei o body com padding-bottom: 5rem para compensar no css
@@ -518,9 +737,10 @@ footer {
   text-align: center;      /* garante centralização do texto */
 }
 
-/* ===================== */
------ RESPONSIVIDADE -----
-/* ===================== */
+/* ========================== */
+/* ----- RESPONSIVIDADE ----- */
+/* ========================== */
+
 
 /* === TELAS MÉDIAS - MONITORES E NOTEBOOKS (até 1025px) === */
 @media screen and (max-width: 1025px) {
@@ -529,13 +749,13 @@ footer {
     .about_container,
     .contact_container {
         max-width: 100%;
-        padding: 3rem 2rem; /* ver com Rafa o erro */
+        padding: 3rem 2rem; 
     }
 
     .menu_content {
         padding: 0 2rem;
     }
-}
+}  
 
 /* TABLETS (até 1024px) */
 @media screen and (max-width: 1024px) {
@@ -623,22 +843,37 @@ footer {
     /* Menu */
     .menu_content {
         justify-content: center;
-        padding: 0 1rem;
     }
 
     .menu_list {
         display: none;
     }
 
-    #titulo a {
-        font-size: 1.25rem;
-    }
+    #title a {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+}
 
     /* Hero Section */
     .hero_container {
-        padding: 1.5rem 1rem;
-        min-height: auto;
+    padding: 1.5rem 1rem;
+    min-height: auto;
+    flex-direction: column;
+    text-align: center;
     }
+
+    .hero_content,
+    .hero_image {
+    flex: 0 0 100%;
+    max-width: 100%;
+    }
+
+    .hero_image img {
+    max-width: 80%;
+    height: auto;
+    }
+  
 
     .hero_content h4 {
         font-size: 1rem;

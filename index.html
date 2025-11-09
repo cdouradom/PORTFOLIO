@@ -17,10 +17,10 @@
     <!-- Link para o CSS -->
     <link rel="stylesheet" href="./assets/css/styles.css">
 
-    <!-- Favicon (PNG recomendado para compatibilidade) -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon.png">
-    <link rel="shortcut icon" href="./assets/img/favicon.png">
+    <!-- Favicon (PNG recomendado para compatibilidade com Mac) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon_rose.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon_rose.png">
+    <link rel="shortcut icon" href="./assets/img/favicon_rose.png">
 
     <!-- Servidores de Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,16 +39,16 @@
  <header class="flex menu_container">
     <!-- Article: define as divisões internas -->
     <article class="menu_content">
-         <!-- Page title -->
+       <!-- Page title -->
         <div id="title">
-            <a href="#">Cintia's Portfolio ❤︎</a> 
+            <a href="#">Cintia's Portfolio ❤︎</a>   
         </div>
         <!-- Menu de navegação -->
         <nav>
             <ul class="flex menu_list">
                 <li><a href="#hero">Welcome</a></li>                   
-                <li><a href="about">About Me</a></li>
-                <li><a href="#contact">Git in Touch</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#contact">Get in Touch</a></li>
             </ul>
         </nav>
     </article>
@@ -61,12 +61,11 @@
         <!-- Article: define as divisões internas -->
         <!-- BOAS VINDAS -->
         <article class="hero_content">
-            <h4>✌🏻 Hi there! I'm Cintia!</h4>
+            <h4>Hi there! I'm Cintia!</h4>
             <h1>Java Full Stack Dev</h1>
-            <p> I turn ideas into code magic to create awesome experiences✨</p>
+            <p> 🪄 I turn ideas into code magic to create awesome experiences 🎨 </p>
             <div class="hero_buttons">
-                <a href="#contact" class="button">Let’s Talk</a>
-                    <span> 💫 </span>
+                <a href="#contact" class="button">Let's Talk</a>
                 <a href="#about" class="button-outline">Know Me</a>
             </div>
         </article>
@@ -74,7 +73,7 @@
         <!-- IMAGEM COM ANIMAÇÃO -->
         <figure class="hero_image">
             <img
-                src="/assets/img/dev_woman.svg"
+                src="./assets/img/dev_Cintia.png"
                 alt="Ilustração com uma mulher desenvolvedora escrevendo código"
                 class="ilustracao float-animation"
             >
@@ -82,39 +81,105 @@
     </section>
 
     <!-- #ABOUT -->
-    <section id="about" class="about_container">
- 
-        <!-- FOTO DO PERFIL -->
-        <figure class="about_image">
-            <img 
-                src="assets/img/avatar_dev_woman.svg" 
-                alt="Foto da pessoa desenvolvedora"
-            >
-        </figure>
+    <section id="about" class="about_container"></section>
 
-        <!-- CONTEÚDO DO PERFIL -->
-        <article class="about_content">
-            <h2>About Me</h2>
-            <p>I am a curious and creative person who loves to learn. I like challenges, new ideas, and growing with every experience.</p>
-            <p>I work as a Quality Manager and I am studying Java Full Stack development. I believe that quality and development together can create better and smarter products.</p>
-            <p>My goal is to keep learning, grow in the tech area, and help build projects that make a difference. Every step is a chance to learn and do something better.</p>
+<!-- ================= SKILLS SECTION ================= -->
+<section class="skills_container" id="skills">
+    <h2>Skills & Tools</h2>
+    <p class="skills_intro">
+        Technologies and tools I use or study for development, testing, and automation.
+    </p>
 
-            <div class="about_stats">
-                <a href="#" target="_blank" class="button">View GitHub</a>
-                <div class="stats-wrapper">
-                    <div class="stat-item">
-                        <p class="stat-number">100</p>
-                        <p class="stat-label">Followers</p>
-                    </div>
-                    <div class="stat-item">
-                        <p class="stat-number">500</p>
-                        <p class="stat-label">Repositories</p>
-                    </div>
+    <div class="skills_grid">
+
+        <!-- ================= FRONTEND ================= -->
+        <div class="skills_column">
+            <div id="title_skills_front">
+                <span class="title_skills_front">Frontend Development</span>
+
+                <!-- HTML -->
+                <div class="skill_item">
+                    <img src="./assets/img/html_icon.png" alt="HTML Icon">
+                    <p>HTML5 → page structure</p>
+                </div>
+
+                <!-- CSS -->
+                <div class="skill_item">
+                    <img src="./assets/img/css_icon.png" alt="CSS Icon">
+                    <p>CSS3 → styles and layout</p>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill_item">
+                    <img src="./assets/img/JS_icon.png" alt="JavaScript Icon">
+                    <p>JavaScript → logic and interaction</p>
+                </div>
+
+                <!-- TypeScript -->
+                <div class="skill_item">
+                    <img src="./assets/img/Typescript_icon.png" alt="TypeScript Icon">
+                    <p>TypeScript → code types and support</p>
+                </div>
+
+                <!-- React -->
+                <div class="skill_item">
+                    <img src="./assets/img/React_icon.png" alt="React Icon">
+                    <p>React → library to build modern pages</p>
+                </div>
+
+                <!-- Git -->
+                <div class="skill_item">
+                    <img src="./assets/img/Git_icon.png" alt="Git Icon">
+                    <p>Git → essential tool for version control in all development</p>
                 </div>
             </div>
+        </div>
 
-        </article>
-    </section>
+        <!-- ================= BACKEND ================= -->
+        <div class="skills_column">
+            <div id="title_skills_back">
+                <span class="title_skills_back">Backend Development</span>
+
+                <!-- Java -->
+                <div class="skill_item">
+                    <img src="./assets/img/Java_icon.png" alt="Java Icon">
+                    <p>Java → main back-end language</p>
+                </div>
+
+                <!-- Spring Boot -->
+                <div class="skill_item">
+                    <img src="./assets/img/Spring_icon.png" alt="Spring Boot Icon">
+                    <p>Spring Boot → Java tool to make APIs and services</p>
+                </div>
+
+                <!-- Node.js -->
+                <div class="skill_item">
+                    <img src="./assets/img/NodeJS_icon.png" alt="Node.js Icon">
+                    <p>Node.js → JavaScript for the server side</p>
+                </div>
+
+                <!-- MySQL -->
+                <div class="skill_item">
+                    <img src="./assets/img/MySQL_icon.png" alt="MySQL Icon">
+                    <p>MySQL → relational database</p>
+                </div>
+
+                <!-- Swagger -->
+                <div class="skill_item">
+                    <img src="./assets/img/Swagger_icon.png" alt="Swagger Icon">
+                    <p>Swagger → API documentation and test</p>
+                </div>
+
+                <!-- Insomnia -->
+                <div class="skill_item">
+                    <img src="./assets/img/Insomnia_icon.png" alt="Insomnia Icon">
+                    <p>Insomnia → tool to test APIs</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     <!-- #CONTACT -->
     <section id="contact" class="contact_container">
@@ -124,19 +189,28 @@
             <h4>Get in Touch</h4>
             <p>Feel free to get in touch with me!</p>
             <div class="social_container">
-                <a href="#" target="_blank" class="social_icon">
+                <a href="https://www.linkedin.com/in/cintia-douradom" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="social_icon">
                     <img
                         src="./assets/img/linkedin.svg"
                         alt="Link to my Linkedin profile page"
                     >
                 </a>
-                <a href="#" target="_blank" class="social_icon">
+                <a href="https://github.com/cdouradom"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social_icon">
                     <img
                         src="./assets/img/github.svg"
                         alt="Link to my GitHub"
                     >
                 </a>
-                <a href="#" target="_blank" class="social_icon">
+                <a href="https://www.instagram.com/ciidourado"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social_icon">
                     <img
                         src="./assets/img/instagram.svg"
                         alt="Link to my Instagram"
@@ -145,8 +219,13 @@
             </div>
         </article>
 
-        <!-- FORMULÁRIO -->
-        <form id="form" action="success.html" method="GET">
+         <!-- FORMULÁRIO -->
+        <form action="https://formsubmit.co/039be107610779687db0079ebb4e9c79" method="POST" id="form">
+
+            <!-- linha de uso local <input type="hidden" name="_next" value="http://127.0.0.1:5500/success.html"> --> 
+            <input type="hidden" name="_next" value="success.html"> 
+            <input type="hidden" name="_captcha" value="false">
+
             <label for="name">Name</label>
             <input id="name" name="name" type="text" placeholder="Enter your full name">
             <span id="txtName"></span>
@@ -161,6 +240,7 @@
 
             <label for="message">Message</label>
             <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+            <span id="txtMessage"></span>
         
             <button class="button" type="submit">Send message</button>
         </form>
@@ -175,6 +255,8 @@
 
   </footer>
 
+  <!-- Script JS -->
+  <script src="./assets/js/script.js"></script>
 
 </body>
 </html>
