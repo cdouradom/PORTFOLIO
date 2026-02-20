@@ -15,28 +15,30 @@
 Portfólio profissional em **HTML**, **CSS** e **JavaScript** (sem framework), com foco em:
 
 - **Posicionamento:** QA Estratégica, Quality Manager, visão de negócio e governança de delivery.
-- **Design:** Paleta profissional (azul escuro, branco, cinza), tipografia moderna (Inter), layout minimalista e responsivo.
-- **Conteúdo:** Sobre mim, como penso qualidade (risco, impacto, governança, previsibilidade, valor), experiência, competências, projetos, tecnologias e contato.
+- **Design:** Paleta terrosa/rosé (neutros creme e bege, acento rosé), tipografia Inter, layout minimalista e responsivo.
+- **Conteúdo:** Sobre mim, como penso qualidade (risco, impacto, governança, previsibilidade, valor), experiência, competências estratégicas, projetos, tecnologias e contato.
 
-O site está pronto para **GitHub Pages** ou **Vercel** (deploy estático).
+O site é estático e está pronto para **GitHub Pages** ou **Vercel**.
 
 ---
 
 ## Funcionalidades
 
-- Design responsivo (desktop, tablet, mobile).
-- Menu fixo com rolagem suave e correção de âncoras para o header.
-- Formulário de contato com validação e página de sucesso.
-- Integração com a API do GitHub (avatar e estatísticas na seção Sobre).
-- Seção “Como penso qualidade estrategicamente” com os pilares: Risco, Impacto, Governança, Previsibilidade, Valor para o negócio.
+- **Layout responsivo** — Desktop, tablet e mobile (menu adaptável, botões e formulário ajustados).
+- **Navegação** — Menu fixo com rolagem suave e âncoras para as seções.
+- **Download de currículos** — Botões para download do currículo em PT e do resume em EN (Hero e Sobre mim).
+- **Formulário de contato** — Validação em tempo real e página de sucesso após envio (FormSubmit).
+- **API do GitHub** — Avatar e estatísticas (seguidores/repositórios) na seção Sobre mim.
+- **Seção “Como penso qualidade”** — Pilares: Risco, Impacto, Governança, Previsibilidade, Valor para o negócio.
+- **Footer** — Nome, tagline, links para LinkedIn, GitHub e Instagram, e copyright.
 
 ---
 
 ## Tecnologias
 
-- **HTML5** — Estrutura semântica.
-- **CSS3** — Variáveis, Flexbox, Grid, responsividade.
-- **JavaScript (ES6+)** — Validação de formulário, API GitHub, âncoras.
+- **HTML5** — Estrutura semântica, acessibilidade (aria-labels, landmarks).
+- **CSS3** — Variáveis (`:root`), Flexbox, Grid, media queries (1024px, 768px, 480px).
+- **JavaScript (ES6+)** — Validação de formulário, fetch à API do GitHub, âncoras e scroll.
 
 ---
 
@@ -47,7 +49,9 @@ O site está pronto para **GitHub Pages** ou **Vercel** (deploy estático).
    git clone https://github.com/cdouradom/PORTFOLIO.git
    cd PORTFOLIO
    ```
-2. Abra `index.html` no navegador ou use a extensão **Live Server** no VS Code (botão direito no arquivo → “Open with Live Server”).
+2. Abra o `index.html` no navegador ou use a extensão **Live Server** no VS Code (clique direito no arquivo → “Open with Live Server”).
+
+Não é necessário instalar dependências nem rodar build — o projeto é HTML/CSS/JS puro.
 
 ---
 
@@ -63,9 +67,9 @@ O site está pronto para **GitHub Pages** ou **Vercel** (deploy estático).
 ### Vercel
 
 1. Acesse [vercel.com](https://vercel.com) e conecte o repositório.
-2. Tipo do projeto: **Static** (ou detectado automaticamente).
+2. Tipo do projeto: **Static**.
 3. **Build command:** em branco. **Output directory:** `.` (raiz).
-4. Deploy. A Vercel gera uma URL e permite domínio customizado.
+4. Deploy. A Vercel gera a URL e permite domínio customizado.
 
 ---
 
@@ -75,12 +79,15 @@ O site está pronto para **GitHub Pages** ou **Vercel** (deploy estático).
 /
 ├── index.html          # Página principal
 ├── success.html        # Página pós-envio do formulário
-├── README.MD
+├── README.MD           # Este arquivo
 ├── REFATORACAO.md      # Análise e justificativas da refatoração
 └── assets/
-    ├── css/styles.css
-    ├── js/script.js
-    └── img/            # Ícones e imagens
+    ├── css/
+    │   └── styles.css  # Estilos (variáveis, componentes, responsivo)
+    ├── js/
+    │   └── script.js  # Validação, API GitHub, âncoras
+    ├── img/           # Favicon, avatar, ícones (tecnologias e redes)
+    └── docs/          # Currículos (PT/EN) e documentação (html.md, css.md)
 ```
 
 ---
@@ -89,3 +96,4 @@ O site está pronto para **GitHub Pages** ou **Vercel** (deploy estático).
 
 - **LinkedIn:** [linkedin.com/in/cintia-douradom](https://www.linkedin.com/in/cintia-douradom)
 - **GitHub:** [github.com/cdouradom](https://github.com/cdouradom)
+- **Instagram:** [@ciidourado](https://www.instagram.com/ciidourado)
