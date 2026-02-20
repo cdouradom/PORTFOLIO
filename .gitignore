@@ -1,0 +1,91 @@
+# ===== NODE.JS (quando usar npm/yarn) =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm
+.yarn-integrity
+.pnp.*
+# Manter package-lock.json e yarn.lock versionados para builds reproduzíveis
+
+# ===== TESTES =====
+coverage/
+.nyc_output/
+*.test.js.snap
+*.lcov
+
+# ===== EDITORES / IDEs =====
+# VS Code
+.vscode/
+*.code-workspace
+.history/
+*.vsix
+
+# Cursor
+.cursor/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# ===== SISTEMA OPERACIONAL =====
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.Bin/
+
+# Linux
+*~
+.directory
+
+# ===== TEMPORÁRIOS =====
+*.tmp
+*.temp
+*.log
+*.swp
+*.swo
+
+# ===== BUILDS / DIST =====
+dist/
+build/
+# Descomente se não versionar assets minificados:
+# *.min.js
+# *.min.css
+
+# ===== ENVIRONMENT =====
+.env
+.env.*
+!.env.example
+
+# ===== CACHE =====
+.cache/
+.parcel-cache/
+.eslintcache
+*.tsbuildinfo
+
+# ===== OUTROS =====
+# Backup
+*.bak
+*.backup
+
+# Config/local (não versionar)
+config.local.js
+.refatoracao.md
+*.local.*
