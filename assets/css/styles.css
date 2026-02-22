@@ -51,7 +51,7 @@
   --error: #c45c5c;
   --warning: #b8860b;
 
-  /* Layout (mesma largura do hero para todas as seções) */
+  /* Layout: largura única 1100px (evitar cache/960 em deploy) */
   --max-width: 1100px;
   --header-height: 72px;
   --section-padding: 4rem 1.5rem;
@@ -97,7 +97,8 @@ a, button {
 }
 
 .header__inner {
-  max-width: var(--max-width);
+  max-width: var(--max-width, 1100px);
+  width: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
   height: 100%;
@@ -132,10 +133,12 @@ a, button {
   color: var(--accent);
 }
 
-/* --- Seções (comum) --- */
+/* --- Seções (comum) — largura 1100px alinhada ao hero --- */
 .section {
-  max-width: var(--max-width);
-  margin: 0 auto;
+  max-width: var(--max-width, 1100px);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   padding: var(--section-padding);
   scroll-margin-top: var(--header-height);
   border-top: 1px solid var(--divider);
@@ -175,7 +178,7 @@ a, button {
   border-radius: var(--radius);
 }
 
-/* --- Hero --- */
+/* --- Hero (sempre duas colunas até breakpoint; largura 1100px) --- */
 .hero {
   padding: 4rem 1.5rem 3rem;
   background: linear-gradient(180deg, var(--accent-soft) 0%, var(--gray-100) 50%, var(--white) 100%);
@@ -183,15 +186,19 @@ a, button {
 }
 
 .hero__inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
+  max-width: var(--max-width, 1100px);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
   align-items: center;
+  min-width: 0;
 }
 
 .hero__banner {
+  min-width: 0;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-md);
@@ -206,6 +213,7 @@ a, button {
 }
 
 .hero__content {
+  min-width: 0;
   text-align: left;
 }
 
@@ -623,7 +631,8 @@ a, button {
 }
 
 .footer__inner {
-  max-width: var(--max-width);
+  max-width: var(--max-width, 1100px);
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -728,9 +737,9 @@ a, button {
 }
 
 .success {
-  max-width: var(--max-width);
-  margin: 0 auto;
+  max-width: var(--max-width, 1100px);
   width: 100%;
+  margin: 0 auto;
 }
 
 .success__box {
@@ -812,23 +821,8 @@ a, button {
   }
 }
 
-@media (max-width: 768px) {
-  :root {
-    --section-padding: 3rem 1.25rem;
-  }
-
-  .nav__list {
-    gap: 1.25rem;
-  }
-
-  .nav__list a {
-    font-size: 0.875rem;
-  }
-
-  .hero {
-    padding: 3rem 1rem 2rem;
-  }
-
+/* Hero: duas colunas até 640px; abaixo disso empilha */
+@media (max-width: 640px) {
   .hero__inner {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -855,6 +849,24 @@ a, button {
   .hero__cta .btn {
     width: 100%;
     max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 3rem 1.25rem;
+  }
+
+  .nav__list {
+    gap: 1.25rem;
+  }
+
+  .nav__list a {
+    font-size: 0.875rem;
+  }
+
+  .hero {
+    padding: 3rem 1rem 2rem;
   }
 
   .quality-grid {
