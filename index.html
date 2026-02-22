@@ -32,9 +32,9 @@
         <ul class="nav__list">
           <li><a href="#hero">Início</a></li>
           <li><a href="#about">Sobre</a></li>
+          <li><a href="#experience">Experiência</a></li>
           <li><a href="#quality">Qualidade</a></li>
           <li><a href="#competencies">Competências</a></li>
-          <li><a href="#experience">Experiência</a></li>
           <li><a href="#projects">Projetos</a></li>
           <li><a href="#technologies">Tecnologias</a></li>
           <li><a href="#contact">Contato</a></li>
@@ -47,16 +47,20 @@
     <!-- Hero -->
     <section id="hero" class="hero">
       <div class="hero__inner">
-        <p class="hero__badge">QA Estratégica & Quality Manager</p>
-        <h1 class="hero__title">Qualidade com visão de negócio</h1>
-        <p class="hero__subtitle">
-          Governança de Delivery, Estratégia de Testes, E-commerce B2B/B2C, Integrações (ERP, CRM, Pagamento) e IA aplicada à Qualidade. Releases End-to-End em ambientes ágeis.
-        </p>
-        <div class="hero__cta">
-          <a href="#contact" class="btn btn--primary">Contato</a>
-          <!-- <a href="#about" class="btn btn--secondary">Sobre mim</a> -->
-          <a href="./assets/docs/Cintia_Marques_Dourado_Curriculo_PT.pdf" download="Cintia_Dourado_Curriculo_PT.pdf" class="btn btn--secondary">Currículo (PT)</a>
-          <a href="./assets/docs/Cintia_Marques_Dourado_Resume_EN.pdf" download="Cintia_Dourado_Resume_EN.pdf" class="btn btn--secondary">Resume (EN)</a>
+        <div class="hero__banner" aria-hidden="true">
+          <img src="./assets/img/banner.png" alt="" width="800" height="450" loading="eager">
+        </div>
+        <div class="hero__content">
+          <p class="hero__badge">QA Estratégica & Quality Manager</p>
+          <h1 class="hero__title">Qualidade com visão de negócio</h1>
+          <p class="hero__subtitle">
+            Governança de Delivery, Estratégia de Testes, E-commerce B2B/B2C, Integrações (ERP, CRM, Pagamento) e IA aplicada à Qualidade. Releases End-to-End em ambientes ágeis.
+          </p>
+          <div class="hero__cta">
+            <a href="#contact" class="btn btn--primary">Contato</a>
+            <a href="./assets/docs/Cintia_Marques_Dourado_Curriculo_PT.pdf" download="Cintia_Dourado_Curriculo_PT.pdf" class="btn btn--secondary">Currículo (PT)</a>
+            <a href="./assets/docs/Cintia_Marques_Dourado_Resume_EN.pdf" download="Cintia_Dourado_Resume_EN.pdf" class="btn btn--secondary">Resume (EN)</a>
+          </div>
         </div>
       </div>
     </section>
@@ -81,63 +85,6 @@
             <div class="stat" id="stat-repos"><span class="stat__number" id="stat-repos-n">—</span><span class="stat__label">Repositórios</span></div>
           </div>
         </article>
-      </div>
-    </section>
-
-    <!-- Como penso qualidade estrategicamente -->
-    <section id="quality" class="section">
-      <h2 class="section__title">Como penso qualidade estrategicamente</h2>
-      <p class="section__subtitle">Meu diferencial na qualidade como parte da governança de delivery e da previsibilidade da entrega: foco em risco, impacto e valor para o negócio.</p>
-      <div class="quality-grid">
-        <div class="quality-card">
-          <h3 class="quality-card__title">Risco</h3>
-          <p class="quality-card__text">Priorizo esforço de testes e validação com base em análise de risco, garantindo que os maiores riscos sejam cobertos primeiro e de forma consciente.</p>
-        </div>
-        <div class="quality-card">
-          <h3 class="quality-card__title">Impacto</h3>
-          <p class="quality-card__text">Avalio impacto em usuários, negócio e sistemas (incluindo integrações e e-commerce) para tomar decisões de qualidade alinhadas ao valor entregue.</p>
-        </div>
-        <div class="quality-card">
-          <h3 class="quality-card__title">Governança</h3>
-          <p class="quality-card__text">Atuo na governança de delivery: critérios de aceite, definição de pronto, métricas e visibilidade para que a qualidade seja previsível e escalável.</p>
-        </div>
-        <div class="quality-card">
-          <h3 class="quality-card__title">Previsibilidade</h3>
-          <p class="quality-card__text">Trabalho com indicadores e processos que permitem prever qualidade e prazo de entrega, reduzindo surpresas e retrabalho.</p>
-        </div>
-        <div class="quality-card">
-          <h3 class="quality-card__title">Valor para o negócio</h3>
-          <p class="quality-card__text">
-            Cada decisão de qualidade está ligada ao valor de negócio: entregar o certo, no momento certo, com o nível de confiança adequado.</p>
-        </div>
-        <div class="quality-card">
-          <h3 class="quality-card__title">Priorização Estratégica</h3>
-          <p class="quality-card__text">
-            Estruturo demandas com base em criticidade, dependências e impacto no fluxo de entrega,
-            garantindo foco no que realmente move o negócio e evitando dispersão de esforço.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Competências estratégicas -->
-    <section id="competencies" class="section">
-      <h2 class="section__title">Competências Estratégicas</h2>
-      <p class="section__subtitle">Áreas onde gero impacto estratégico e previsibilidade de entrega.</p>
-
-      <div class="tags">
-        <span class="tag tag--highlight">QA Estratégica</span>
-        <span class="tag tag--highlight">Governança de Delivery</span>
-        <span class="tag tag--highlight">Estratégia de Testes</span>
-        <span class="tag tag--highlight">Análise de Risco e Impacto</span>
-
-        <span class="tag">E-commerce B2B / B2C</span>
-        <span class="tag">Releases End-to-End</span>
-        <span class="tag">Integrações (ERP, CRM, Pagamento)</span>
-        <span class="tag">Validação de APIs</span>
-        <span class="tag">Ambientes com Deploy Contínuo</span>
-        <span class="tag">Scrum & Kanban</span>
-        <span class="tag">IA aplicada à Qualidade</span>
       </div>
     </section>
 
@@ -204,6 +151,62 @@
       </div>
     </section>
 
+    <!-- Como penso qualidade estrategicamente -->
+    <section id="quality" class="section">
+      <h2 class="section__title">Como penso qualidade estrategicamente</h2>
+      <p class="section__subtitle">Meu diferencial na qualidade como parte da governança de delivery e da previsibilidade da entrega: foco em risco, impacto e valor para o negócio.</p>
+      <div class="quality-grid">
+        <div class="quality-card">
+          <h3 class="quality-card__title">Risco</h3>
+          <p class="quality-card__text">Priorizo esforço de testes e validação com base em análise de risco, garantindo que os maiores riscos sejam cobertos primeiro e de forma consciente.</p>
+        </div>
+        <div class="quality-card">
+          <h3 class="quality-card__title">Impacto</h3>
+          <p class="quality-card__text">Avalio impacto em usuários, negócio e sistemas (incluindo integrações e e-commerce) para tomar decisões de qualidade alinhadas ao valor entregue.</p>
+        </div>
+        <div class="quality-card">
+          <h3 class="quality-card__title">Governança</h3>
+          <p class="quality-card__text">Atuo na governança de delivery: critérios de aceite, definição de pronto, métricas e visibilidade para que a qualidade seja previsível e escalável.</p>
+        </div>
+        <div class="quality-card">
+          <h3 class="quality-card__title">Previsibilidade</h3>
+          <p class="quality-card__text">Trabalho com indicadores e processos que permitem prever qualidade e prazo de entrega, reduzindo surpresas e retrabalho.</p>
+        </div>
+        <div class="quality-card">
+          <h3 class="quality-card__title">Valor para o negócio</h3>
+          <p class="quality-card__text">
+            Cada decisão de qualidade está ligada ao valor de negócio: entregar o certo, no momento certo, com o nível de confiança adequado.</p>
+        </div>
+        <div class="quality-card">
+          <h3 class="quality-card__title">Priorização Estratégica</h3>
+          <p class="quality-card__text">
+            Estruturo demandas com base em criticidade, dependências e impacto no fluxo de entrega,
+            garantindo foco no que realmente move o negócio e evitando dispersão de esforço.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Competências estratégicas -->
+    <section id="competencies" class="section">
+      <h2 class="section__title">Competências Estratégicas</h2>
+      <p class="section__subtitle">Áreas onde gero impacto estratégico e previsibilidade de entrega.</p>
+
+      <div class="tags">
+        <span class="tag tag--highlight">QA Estratégica</span>
+        <span class="tag tag--highlight">Governança de Delivery</span>
+        <span class="tag tag--highlight">Estratégia de Testes</span>
+        <span class="tag tag--highlight">Análise de Risco e Impacto</span>
+
+        <span class="tag">E-commerce B2B / B2C</span>
+        <span class="tag">Releases End-to-End</span>
+        <span class="tag">Integrações (ERP, CRM, Pagamento)</span>
+        <span class="tag">Validação de APIs</span>
+        <span class="tag">Ambientes com Deploy Contínuo</span>
+        <span class="tag">Scrum & Kanban</span>
+        <span class="tag">IA aplicada à Qualidade</span>
+      </div>
+    </section>
 
     <!-- Projetos -->
     <section id="projects" class="section">
@@ -211,12 +214,24 @@
       <p class="section__subtitle">Repositórios e trabalhos em destaque no GitHub.</p>
       <div class="projects-grid">
         <div class="project-card">
-          <h3 class="project-card__title"><a href="https://github.com/cdouradom" target="_blank" rel="noopener noreferrer">GitHub — cdouradom</a></h3>
+          <h3 class="project-card__title"><a href="https://github.com/cdouradom" target="_blank" 
+            rel="noopener noreferrer">GitHub — cdouradom</a></h3>
           <p class="project-card__desc">Acesse meu perfil para ver repositórios, contribuições e projetos de desenvolvimento e qualidade.</p>
         </div>
         <div class="project-card">
-          <h3 class="project-card__title"><a href="https://github.com/cdouradom/PORTFOLIO" target="_blank" rel="noopener noreferrer">Este portfólio</a></h3>
+          <h3 class="project-card__title"><a href="https://github.com/cdouradom/PORTFOLIO" target="_blank" 
+            rel="noopener noreferrer">Este portfólio</a></h3>
           <p class="project-card__desc">Código deste site: HTML, CSS e JavaScript, focado em clareza, responsividade e posicionamento profissional.</p>
+        </div>
+        <div class="project-card">
+          <h3 class="project-card__title"><a href="https://github.com/cdouradom/weather_project" target="_blank"
+              rel="noopener noreferrer">Weather Project</a></h3>
+          <p class="project-card__desc">.Aplicação web moderna de previsão do tempo utilizando JavaScript puro e API Open-Meteo.</p>
+        </div>
+        <div class="project-card">
+          <h3 class="project-card__title"><a href="https://github.com/cdouradom/Blog-Pessoal" target="_blank"
+              rel="noopener noreferrer">Projeto Blog Pessoal</a></h3>
+          <p class="project-card__desc">Aplicação web de blog pessoal utilizando Java Spring Boot, Spring Security, JPA e Thymeleaf.</p>
         </div>
       </div>
     </section>
