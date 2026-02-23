@@ -95,7 +95,6 @@
         return;
       }
 
-      var nextEl = document.getElementById('form-next');
       var origin = typeof window.location.origin !== 'undefined' ? window.location.origin : '';
       var pathname = window.location.pathname || '/';
       var base = pathname.endsWith('/') ? pathname : pathname.replace(/\/[^/]*$/, '/');
@@ -103,14 +102,34 @@
         base = '/PORTFOLIO/';
       }
       var successUrl = origin ? (origin + base + 'success.html') : 'https://cdouradom.github.io/PORTFOLIO/success.html';
-      if (nextEl) nextEl.value = successUrl;
 
-      form.setAttribute('action', FORM_ACTION_URL);
+      var originalLabel = submitBtn ? submitBtn.textContent : '';
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Enviando...';
       }
-      form.submit();
+      if (txtMessage) txtMessage.textContent = '';
+
+      var formData = 'name=' + encodeURIComponent(name.value.trim()) +
+        '&email=' + encodeURIComponent(email.value.trim()) +
+        '&subject=' + encodeURIComponent(subject.value.trim()) +
+        '&message=' + encodeURIComponent(message.value.trim()) +
+        '&nextUrl=' + encodeURIComponent(successUrl);
+
+      fetch(FORM_ACTION_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData
+      }).then(function () {
+        window.location.href = successUrl;
+      }).catch(function () {
+        if (txtMessage) txtMessage.textContent = 'Erro ao enviar. Tente novamente.';
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+        }
+      });
     });
   }
 

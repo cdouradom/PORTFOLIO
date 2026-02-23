@@ -300,9 +300,8 @@
         </div>
         </article>
 
-        <!-- action aponta direto para o Google Apps Script (evita cache/FormSubmit no site em produção) -->
-        <form action="https://script.google.com/macros/s/AKfycbzmytfNKINwG7OQ60X1kjAwy_yY_vHlHu5AkCrNu9qSaDmKeH2qXFOKtLOeCAN9e0iH/exec" method="POST" id="form" class="form">
-          <input type="hidden" name="nextUrl" id="form-next" value="">
+        <!-- Envio via fetch em script.js; action só fallback. URL fica sempre no domínio do portfólio -->
+        <form action="#" method="POST" id="form" class="form">
           <label for="name">Nome</label>
           <input id="name" name="name" type="text" placeholder="Seu nome completo">
           <span id="txtName" class="form__error"></span>
@@ -346,6 +345,6 @@
     </div>
   </footer>
 
-  <script src="./assets/js/script.js?v=sheets"></script>
+  <script src="./assets/js/script.js?v=fetch"></script>
 </body>
 </html>

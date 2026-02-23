@@ -10,6 +10,15 @@
 
 var NOTIFICATION_EMAIL = 'cdouradom@gmail.com';
 
+function doGet() {
+  return HtmlService.createHtmlOutput(
+    '<!DOCTYPE html><html><body style="font-family:sans-serif;padding:2rem;text-align:center;">' +
+    '<p>Use o formulário do portfólio para enviar mensagens.</p>' +
+    '<p><a href="https://cdouradom.github.io/PORTFOLIO/">Voltar ao portfólio</a></p>' +
+    '</body></html>'
+  );
+}
+
 function doPost(e) {
   e = e || {};
   var params = e.parameter || {};
@@ -43,11 +52,11 @@ function doPost(e) {
       'Email: ' + email + '\n' +
       'Assunto: ' + subject + '\n\n' +
       'Mensagem:\n' + message;
-    MailApp.sendEmail(
-      NOTIFICATION_EMAIL,
-      '[Portfólio] Nova mensagem: ' + (subject || '(sem assunto)'),
-      emailBody
-    );
+    MailApp.sendEmail({
+      to: NOTIFICATION_EMAIL,
+      subject: '[Portfólio] Nova mensagem: ' + (subject || '(sem assunto)'),
+      body: emailBody
+    });
   } catch (mailErr) {
   }
 
