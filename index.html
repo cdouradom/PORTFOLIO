@@ -300,10 +300,9 @@
         </div>
         </article>
 
-        <form action="https://formsubmit.co/039be107610779687db0079ebb4e9c79" method="POST" id="form" class="form">
-          <input type="hidden" name="_next" value="https://cdouradom.github.io/PORTFOLIO/success.html">
-          <input type="hidden" name="_captcha" value="false">
-
+        <!-- action aponta direto para o Google Apps Script (evita cache/FormSubmit no site em produção) -->
+        <form action="https://script.google.com/macros/s/AKfycbzmytfNKINwG7OQ60X1kjAwy_yY_vHlHu5AkCrNu9qSaDmKeH2qXFOKtLOeCAN9e0iH/exec" method="POST" id="form" class="form">
+          <input type="hidden" name="nextUrl" id="form-next" value="">
           <label for="name">Nome</label>
           <input id="name" name="name" type="text" placeholder="Seu nome completo">
           <span id="txtName" class="form__error"></span>
@@ -320,7 +319,7 @@
           <textarea id="message" name="message" placeholder="Sua mensagem..."></textarea>
           <span id="txtMessage" class="form__error"></span>
 
-          <button type="submit" class="btn btn--primary form__submit">Enviar mensagem</button>
+          <button type="submit" class="btn btn--primary form__submit" id="form-submit-btn">Enviar mensagem</button>
         </form>
       </div>
     </section>
@@ -347,6 +346,6 @@
     </div>
   </footer>
 
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js?v=sheets"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 /**
  * Portfólio — Cintia Dourado
  * - Enriquecimento da seção About com API GitHub (avatar + estatísticas)
- * - Validação do formulário de contato
+ * - Validação do formulário de contato e envio para Google Sheets (Apps Script)
  * - Correção de âncoras com header fixo
  */
 
@@ -10,6 +10,13 @@
 
   const GITHUB_USER = 'cdouradom';
   const HEADER_OFFSET = 72;
+
+  /**
+   * URL do Google Apps Script (Aplicativo da Web).
+   * Substitua pela URL que você obteve ao implantar o script em docs/google-apps-script.js
+   * Ex.: 'https://script.google.com/macros/s/XXXXXXXXXX/exec'
+   */
+  const FORM_ACTION_URL = 'https://script.google.com/macros/s/AKfycbzmytfNKINwG7OQ60X1kjAwy_yY_vHlHu5AkCrNu9qSaDmKeH2qXFOKtLOeCAN9e0iH/exec';
 
   // --- API GitHub (avatar + stats) ---
   async function enrichAboutFromGitHub() {
@@ -37,7 +44,7 @@
     }
   }
 
-  // --- Validação do formulário ---
+  // --- Validação e envio do formulário (Google Sheets via Apps Script) ---
   const form = document.getElementById('form');
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -53,6 +60,7 @@
       const txtEmail = document.getElementById('txtEmail');
       const txtSubject = document.getElementById('txtSubject');
       const txtMessage = document.getElementById('txtMessage');
+      const submitBtn = document.getElementById('form-submit-btn');
 
       let valid = true;
 
@@ -80,7 +88,29 @@
         valid = false;
       } else if (txtMessage) txtMessage.textContent = '';
 
-      if (valid) form.submit();
+      if (!valid) return;
+
+      if (!FORM_ACTION_URL || FORM_ACTION_URL === 'YOUR_GOOGLE_SCRIPT_URL') {
+        if (txtMessage) txtMessage.textContent = 'Configure a URL do Google Script em script.js (FORM_ACTION_URL).';
+        return;
+      }
+
+      var nextEl = document.getElementById('form-next');
+      var origin = typeof window.location.origin !== 'undefined' ? window.location.origin : '';
+      var pathname = window.location.pathname || '/';
+      var base = pathname.endsWith('/') ? pathname : pathname.replace(/\/[^/]*$/, '/');
+      if (base === '/' && origin.indexOf('github.io') !== -1) {
+        base = '/PORTFOLIO/';
+      }
+      var successUrl = origin ? (origin + base + 'success.html') : 'https://cdouradom.github.io/PORTFOLIO/success.html';
+      if (nextEl) nextEl.value = successUrl;
+
+      form.setAttribute('action', FORM_ACTION_URL);
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
+      }
+      form.submit();
     });
   }
 

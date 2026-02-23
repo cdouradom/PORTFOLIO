@@ -18,7 +18,7 @@ Portfólio profissional em **HTML**, **CSS** e **JavaScript** (sem framework), c
 - **Design:** Paleta terrosa/rosé (neutros creme e bege, acento rosé), tipografia Inter, layout minimalista e responsivo.
 - **Conteúdo:** Sobre mim, como penso qualidade (risco, impacto, governança, previsibilidade, valor), experiência, competências estratégicas, projetos, tecnologias e contato.
 
-O site é estático e está pronto para **GitHub Pages** ou **Vercel**.
+O site é estático e está pronto para **GitHub Pages** ou **Vercel**. O formulário de contato grava as mensagens numa planilha do **Google Sheets** e envia um email de notificação; a configuração está em **[CONFIG_GOOGLE_SHEETS.md](CONFIG_GOOGLE_SHEETS.md)**.
 
 ---
 
@@ -27,7 +27,7 @@ O site é estático e está pronto para **GitHub Pages** ou **Vercel**.
 - **Layout responsivo** — Desktop, tablet e mobile (menu adaptável, botões e formulário ajustados).
 - **Navegação** — Menu fixo com rolagem suave e âncoras para as seções.
 - **Download de currículos** — Botões para download do currículo em PT e do resume em EN (Hero e Sobre mim).
-- **Formulário de contato** — Validação em tempo real e página de sucesso após envio (FormSubmit).
+- **Formulário de contato** — Validação em tempo real, envio para Google Sheets (planilha + email para você), redirecionamento para página de sucesso.
 - **API do GitHub** — Avatar e estatísticas (seguidores/repositórios) na seção Sobre mim.
 - **Seção “Como penso qualidade”** — Pilares: Risco, Impacto, Governança, Previsibilidade, Valor para o negócio.
 - **Footer** — Nome, tagline, links para LinkedIn, GitHub e Instagram, e copyright.
@@ -77,17 +77,20 @@ Não é necessário instalar dependências nem rodar build — o projeto é HTML
 
 ```
 /
-├── index.html          # Página principal
-├── success.html        # Página pós-envio do formulário
-├── README.MD           # Este arquivo
-├── REFATORACAO.md      # Análise e justificativas da refatoração
+├── index.html              # Página principal
+├── success.html            # Página pós-envio do formulário
+├── README.MD               # Este arquivo
+├── CONFIG_GOOGLE_SHEETS.md # Configuração do formulário → Google Sheets + email
+├── REFATORACAO.md          # Análise e justificativas da refatoração
+├── docs/
+│   └── google-apps-script.js  # Script para colar no Apps Script (planilha)
 └── assets/
     ├── css/
-    │   └── styles.css  # Estilos (variáveis, componentes, responsivo)
+    │   └── styles.css      # Estilos (variáveis, componentes, responsivo)
     ├── js/
-    │   └── script.js  # Validação, API GitHub, âncoras
-    ├── img/           # Favicon, avatar, ícones (tecnologias e redes)
-    └── docs/          # Currículos (PT/EN) e documentação (html.md, css.md)
+    │   └── script.js       # Validação, API GitHub, envio do formulário
+    ├── img/                # Favicon, avatar, banner, ícones
+    └── docs/               # Documentação (html.md, css.md) e currículos (PT/EN)
 ```
 
 ---
